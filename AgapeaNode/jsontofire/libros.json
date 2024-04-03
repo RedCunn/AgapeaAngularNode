@@ -1,0 +1,196 @@
+{
+    "libros": [
+        {
+            "idlibro": 1,
+            "titulo": "PROGRAMANDO EN EL LADO SERVIDOR EN JAVA",
+            "idtema": 1,
+            "paginas": 1000,
+            "autor": "PEDRO PEREZ",
+            "precio": 40
+        },
+        {
+            "idlibro": 2,
+            "titulo": "PROGRAMANDO EN EL LADO SERVIDOR EN PHP",
+            "idtema": 1,
+            "paginas": 400,
+            "autor": "JUAN GARCIA",
+            "precio": 35
+        },
+        {
+            "idlibro": 3,
+            "titulo": "BASES DE DATOS RELACIONALES",
+            "idtema": 1,
+            "paginas": 600,
+            "autor": "ANA GOMEZ",
+            "precio": 30
+        },
+{
+            "idlibro": 4,
+            "titulo": "TOMCAT VERSUS GLASSFISH",
+            "idtema": 1,
+            "paginas": 700,
+            "autor": "CARMEN MAURA",
+            "precio": 60
+        },
+{
+            "idlibro": 5,
+            "titulo": "PETICIONES Y RESPUESTAS DE SERVIDOR",
+            "idtema": 1,
+            "paginas": 250,
+            "autor": "JAIMITO GOMEZ",
+            "precio": 22
+        },
+{
+            "idlibro": 6,
+            "titulo": "LA FEROZ CRISIS DE LA BANCA",
+            "idtema": 2,
+            "paginas": 124,
+            "autor": "MARIO CONDE",
+            "precio": 66
+        },
+{
+            "idlibro": 7,
+            "titulo": "EL ANALFABETISMO DE LOS POLITICOS",
+            "idtema": 2,
+            "paginas": 400,
+            "autor": "ZAPATERO",
+            "precio": 55
+        },
+{
+            "idlibro": 8,
+            "titulo": "LA REVOLUCION INDUSTRIAL",
+            "idtema": 2,
+            "paginas": 666,
+            "autor": "KURRO MANY",
+            "precio": 12
+        },
+{
+            "idlibro": 9,
+            "titulo": "EL CAPITAL",
+            "idtema": 2,
+            "paginas": 346,
+            "autor": "PEDRO PEREZ",
+            "precio": 30
+        },
+{
+            "idlibro": 10,
+            "titulo": "CONTAMOS CONTIGO",
+            "idtema": 3,
+            "paginas": 400,
+            "autor": "NADIE PRACTICA",
+            "precio": 10
+        },
+{
+            "idlibro": 11,
+            "titulo": "EL DEPORTE REY",
+            "idtema": 3,
+            "paginas": 333,
+            "autor": "J.C. REY",
+            "precio": 50
+        },
+{
+            "idlibro": 12,
+            "titulo": "LA NATACION. VISTA OCULTA",
+            "idtema": 3,
+            "paginas": 454,
+            "autor": "RAFA NADAL",
+            "precio": 40
+        },
+{
+            "idlibro": 13,
+            "titulo": "LUCHA GRECORROMANA",
+            "idtema": 3,
+            "paginas": 776,
+            "autor": "TIFOSI ITALIANO",
+            "precio": 30
+        },
+{
+            "idlibro": 14,
+            "titulo": "LA PETANCA",
+            "idtema": 3,
+            "paginas": 300,
+            "autor": "CRACK BOOM",
+            "precio": 12
+        },
+{
+            "idlibro": 15,
+            "titulo": "EL AJEDREZ VISTO POR DENTRO",
+            "idtema": 3,
+            "paginas": 124,
+            "autor": "IN ALBIS KARPOV",
+            "precio": 15
+        },
+{
+            "idlibro": 16,
+            "titulo": "LA CATALU�A DE LAS MEZQUINDADES",
+            "idtema": 4,
+            "paginas": 400,
+            "autor": "JORDI JORDI NANO",
+            "precio": 100
+        },
+{
+            "idlibro": 17,
+            "titulo": "EL SITIO VASCO",
+            "idtema": 4,
+            "paginas": 400,
+            "autor": "AGUR TIERRA",
+            "precio": 200
+        },
+{
+            "idlibro": 18,
+            "titulo": "HITLERISMO Y CATALANISMO",
+            "idtema": 4,
+            "paginas": 400,
+            "autor": "TAL PARA-CUALES",
+            "precio": 300
+        },
+{
+            "idlibro": 19,
+            "titulo": "UNA, TRES O NUEVE DIMENSIONES",
+            "idtema": 5,
+            "paginas": 200,
+            "autor": "KARL SAGAN",
+            "precio": 22
+        },
+{
+            "idlibro": 20,
+            "titulo": "CUANTOS BIG BANG LLEVAMOS",
+            "idtema": 5,
+            "paginas": 300,
+            "autor": "QUE SAGAZ",
+            "precio": 70
+        },
+{
+            "idlibro": 21,
+            "titulo": "EL DIOS DISPERSO POR EL ETER",
+            "idtema": 5,
+            "paginas": 45,
+            "autor": "AN�NIMO",
+            "precio": 30
+        },
+{
+            "idlibro": 22,
+            "titulo": "COLONIALISMO IMPERIAL -DIGO ESPACIAL",
+            "idtema": 5,
+            "paginas": 397,
+            "autor": "S. LIRON ESTE PAIS",
+            "precio": 20
+        },
+{
+            "idlibro": 23,
+            "titulo": "POLVO DE ESTRELLAS",
+            "idtema": 5,
+            "paginas": 345,
+            "autor": "QUE SAGAZ",
+            "precio": 40
+        },
+{
+            "idlibro": 24,
+            "titulo": "LA LUNA �HIJA DE LA TIERRA?",
+            "idtema": 5,
+            "paginas": 999,
+            "autor": "ILUSO SANCHEZ",
+            "precio": 30
+        }
+    ]
+}

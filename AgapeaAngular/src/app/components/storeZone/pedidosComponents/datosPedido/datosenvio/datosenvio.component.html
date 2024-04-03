@@ -1,0 +1,176 @@
+<div class="flex flex-row mt-3">
+    <span class="text-red-600"><mat-icon>house</mat-icon></span>
+    <h3 class="ps-2 text-red-600">1. - Datos de entrega</h3>
+</div>
+    <!-- @* -- filas de radios para seleccionar direccion principal de envio del cliente u otra nueva... -- *@ -->
+    
+        @if( this.mainAddr != undefined){
+
+        <div class="">
+            <input class="form-check-input" type="radio" id="direccionprincipal" name="direccionenvio" value="principal" checked (change)="this.CheckMainAddr(true)" />
+            <label>{{mainAddr.calle}}, {{mainAddr.municipio.DMUN50}}, {{mainAddr.provincia.PRO}}, {{mainAddr.cp}}
+                {{mainAddr.pais}}</label>
+        </div>
+
+        }
+        <div class="">
+            <input class="form-check-input" type="radio" id="direccionotra" name="direccionenvio" value="nueva" (change)="this.CheckMainAddr(false)" />
+            <label class="form-check-label" for="direccionotra">
+                Añadir nueva dirección
+            </label>
+        </div>
+        @if (!this.mainAddrChecked)
+        {
+        <!-- @* -- filas de campos para nueva direccion envio solo si esta chequeado RADIO OTRA DIRECCION-- *@ -->
+        <div id="direccioncontainer" class="container" >
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <label for="pais" class="block mb-2 text-sm font-medium text-gray-900">País</label>
+                    <select id="pais" name="pais" [value]="this.orderdata.direccionEnvio.pais || '' " (input)="this.orderdata.direccionEnvio!.pais=$any($event.target).value"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="-1" selected>- Seleccionar país -</option>
+                        <option value="1-España">España</option>
+                    </select>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <label for="provincia" class="block mb-2 text-sm font-medium text-gray-900">Provincia</label>
+                    <select id="provincia" (change)="LoadMunicipios($any($event.target).value)" 
+                         name="provincia"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="-1" selected>- Seleccionar provincia -</option>
+                        @for(prov of this.provinciasList; track prov.CPRO){
+                        <option value="{{prov.CPRO}}-{{prov.PRO}}">{{ prov.PRO}}</option>
+                        }
+
+                    </select>
+                </div>
+            </div>
+
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" id="calle" name="calle" [value]="this.orderdata.direccionEnvio.calle || ''" (input)="this.orderdata.direccionEnvio!.calle=$any($event.target).value"
+                    class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                    placeholder="" required />
+                <label for="floating_email"
+                    class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                    Dirección completa
+                </label>
+            </div>
+            <div class="grid md:grid-cols-2 md:gap-6">
+                <div class="relative z-0 w-full mb-5 group">
+                    <input type="text" id="cp" name="cp" [value]="this.orderdata.direccionEnvio.cp || ''" (input)="this.orderdata.direccionEnvio!.cp=$any($event.target).value"
+                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_first_name"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                        Código Postal
+                    </label>
+                </div>
+                <div class="relative z-0 w-full mb-5 group">
+                    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Municipio</label>
+                    <select id="countries" name="municipio" (change)="setMunicipioSelect($any($event.target).value)"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        #selectmunis>
+                        @for (muni of this.municipiosList$ |async; track muni.DMUN50) {
+                        <option [value]="muni.CMUM + '-' + muni.DMUN50">{{muni.DMUN50}}</option>
+                        }@empty {
+                        <option value="-1" selected> - Selecciona Municipio -</option>
+                        }
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        }
+        <!-- @* -- fila de radios para seleccionar datos de contacto persona de envio  -- *@ -->
+        @if(this.clientData){
+        @if(this.clientData.cuenta.email != ''){
+        <fieldset>
+            <div class="flex items-center mb-4">
+                <input (change)="this.CheckLoggedClientForDelivery(true)" type="radio" name="personaenvio" [value]="this.clientData" checked
+                    class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                <label for="misdatos" class="block ms-2  text-sm font-medium text-gray-900 ">
+                    Datos de {{this.clientData.cuenta.email}} ( {{this.clientData.cuenta.login}} )
+                </label>
+            </div>
+            <div class="flex items-center mb-4">
+                <input id="country-option-1" type="radio" name="personaenvio" (change)="this.CheckLoggedClientForDelivery(false)"
+                    class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+                <label for="otrosdatos" class="block ms-2  text-sm font-medium text-gray-900 ">
+                    Usar otros datos
+                </label>
+            </div>
+        </fieldset>
+        }
+
+        @if(this.loggedClientDelivChecked){
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" id="floating_first_name" [value]="this.clientData.telefono" name="telefonoContacto"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                [placeholder]="this.clientData.telefono " required />
+            <label for="telefono"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                Teléfono
+            </label>
+        </div>
+        }
+        }
+
+        <!-- @* -- fila de campos para datos de persona de envio -- *@ -->
+        @if (!this.loggedClientDelivChecked)
+        {
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                        
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="nombre"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Nombre
+                        </label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" id="floating_last_name" name="apellidosEnvio" [value]="this.orderdata.apellidosEnvio || ''"(input)="this.orderdata.apellidosEnvio=$any($event.target).value"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="apellidos"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Apellidos
+                        </label>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 md:gap-6">
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" id="floating_first_name" name="emailEnvio" [value]="this.orderdata.emailEnvio || ''"(input)="this.orderdata.emailEnvio=$any($event.target).value"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="correo"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Correo electrónico
+                        </label>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <input type="text" id="floating_last_name" name="telefonoContacto" [value]="this.orderdata.telefonoEnvio || ''"(input)="this.orderdata.telefonoEnvio=$any($event.target).value"
+                            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                            placeholder=" " required />
+                        <label for="telefono"
+                            class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+                            Teléfono
+                        </label>
+                    </div>
+                </div>
+
+        }
+        <div class="mb-5">
+            <label for="otrosdatos" class="block mb-2 text-sm font-medium text-gray-900">Otros datos de entrega
+                <small>(Máx.
+                    50
+                    caracteres)</small></label>
+            <input type="text" id="large-input" name="otrosDatos" [value]="this.orderdata.otrosDatos || ''"(input)="this.orderdata.otrosDatos=$any($event.target).value"
+                class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-blue-100 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        </div>
+        <div class="flex items-center mb-4">
+            <input (change)="this.ShowDatosFacturaComponent($event)" type="checkbox" name="quierofactura"
+                class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+            <label for="checkbill" class="ms-2 text-sm font-medium text-gray-900">
+                Deseo factura</label>
+        </div>

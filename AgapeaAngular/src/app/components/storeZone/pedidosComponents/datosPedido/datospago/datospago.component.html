@@ -1,0 +1,73 @@
+<div class="flex flex-row mt-3">
+    <span class="text-red-600"><mat-icon>payments</mat-icon></span>
+    <h3 class="ps-2 text-red-600">{{this.title}}</h3>
+</div>
+    <div class="flex items-center mb-4">
+        <input
+        name="checkcodpromo" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+        <label for="checkcodpromo" class="ms-2 text-sm font-medium text-gray-900">
+            Usar código promocional</label>
+    </div>
+    <fieldset class="grid grid-cols-2 items-center">
+        <div class="flex items-center mb-4">
+            <input (change)="this.CheckTarjeta(true)" 
+                type="radio" name="metodoPago" value="tarjeta" (change)="this.orderdata.metodoPago='tarjeta'"
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+            <label for="pago" class="block ms-2  text-sm font-medium text-gray-900">
+                Pago con tarjeta
+            </label>
+            <img src="../../../../../../assets/img/Visa-MasterCard-1024x393.png" alt="..." style="width: 130px;">
+        </div>
+        <div class="flex items-center mb-4">
+            <input (change)="this.CheckTarjeta(false)" name="metodoPago" value="paypal" (change)="this.orderdata.metodoPago='paypal'"
+                type="radio"
+                class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-600 dark:focus:bg-blue-600 dark:bg-gray-700 dark:border-gray-600">
+            <label for="pago" class="block ms-2  text-sm font-medium text-gray-900">
+                Pago mediante 
+            </label>
+            <img src="../../../../../../assets/img/logo_orange_paypal_icon_134361.png" alt="..." style="width: 80px;">
+        </div>
+    </fieldset>
+    @if(this.checkedtarjeta){
+        <div class="container bg-slate-300 p-5 rounded-md">
+            <h2>Datos de la tarjeta</h2>
+            
+                <div class="grid md:grid-cols-3 md:gap-3">
+                    <div class="mb-5">
+                        <label for="numerotarjeta" class="block mb-2 text-sm font-medium text-gray-900">Número de tarjeta</label>
+                        <input type="text" name="numeroTarjeta" [value]="this.orderdata.numeroTarjeta ||''" (input)="this.orderdata.numeroTarjeta=$any($event.target).value"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
+                    </div>
+                    <div class=" h-1/2 mb-5 flex flex-col">
+                        <label for="fechacaduc" class="block mb-2 text-sm font-medium text-gray-900">Fecha de caducidad</label>
+                        <div class="flex flex-row">
+                            <select id="anio" name="anioCaducidad" [value]="this.orderdata.anioCaducidad ||''" (input)="this.orderdata.anioCaducidad=$any($event.target).value"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            @for (anio of this.years; track $index){
+                                <option value="@anio">{{anio}}</option>
+                            }
+                        </select>
+                        <select id="month" name="mesCaducidad" [value]="this.orderdata.mesCaducidad ||''" (input)="this.orderdata.mesCaducidad=$any($event.target).value"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            @for (mes of this.months; track $index){
+                                <option value="@mes">{{mes}}</option>
+                            }
+                        </select>
+                        </div>
+                    </div>
+                    <div class="relative z-0 w-full mb-5 group">
+                        <label for="cvv" class="block mb-2 text-sm font-medium text-gray-900 ">CVV</label>
+                        <input type="text" name="cvv" [value]="this.orderdata.cvv ||''" (input)="this.orderdata.cvv=$any($event.target).value"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
+                    </div>
+                </div>
+                <div class="mb-5">
+                    <label for="nombrebanco" class="block mb-2 text-sm font-medium text-gray-900 ">Nombre del Banco de la tarjeta</label>
+                    <input type="text" name="nombreBanco" [value]="this.orderdata.banco ||''" (input)="this.orderdata.banco=$any($event.target).value" 
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required>
+                </div>
+            
+            <img src="../../../../../../assets/img/Visa-MasterCard-1024x393.png" alt="..." style="width: 100px;">
+        </div>
+            
+    }

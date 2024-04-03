@@ -1,0 +1,78 @@
+
+<div class="grid">
+    
+    <div class="flex flex-row items-center justify-center mb-5">
+
+        <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 rounded-s-lg">
+            <ul class="space-y-2 font-medium">
+                <li>
+                    <div class="flex flex-col justify-center mt-8">
+                        <div class="flex justify-center">
+                            <img [src]="this.clientData?.cuenta?.imagenAvatarBASE64 || '../../../../../assets/img/blank-profile-picture-973460_960_720.webp'" style="width:8rem; height:10rem;"/>
+                        </div>
+                        <div class="flex justify-center">
+                            <p class="text-orange-500 text-4xl">{{this.clientData?.cuenta?.login}}</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Panel/Inicio'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>house</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Inicio</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Panel/MisCompras'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>shopping_bag</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Mis Compras</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Panel/MisOpiniones'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>feedback</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Mis Opiniones</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Panel/MisListas'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>list</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Mis Listas</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Panel/Recomendador'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>shuffle_on</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Recomendador de libros</span>
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="'/Cliente/Logout'"  routerLinkActive="router-link-active"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <span><mat-icon>logout</mat-icon></span>
+                        <span class="flex-1 ms-3 whitespace-nowrap">Cerrar sesión</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        @switch (this.currentRoute) {
+            @case ('/Cliente/Panel/Inicio') {
+                <app-iniciopanel></app-iniciopanel>
+            }
+            @case ('/Cliente/Panel/MisCompras') {
+                <app-miscompras></app-miscompras>
+            }
+            @case ('/Cliente/Panel/MisOpiniones') {
+                <app-misopiniones></app-misopiniones>
+            }
+            @default {
+                <app-iniciopanel></app-iniciopanel>
+            }
+        }
+    </div>
+</div>
+

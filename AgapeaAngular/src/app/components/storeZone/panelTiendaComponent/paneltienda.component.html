@@ -1,0 +1,32 @@
+
+ <aside id="logo-sidebar" class="fixed top-[10rem] left-[5rem] z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    <div class="h-full px-3 py-4 overflow-y-auto bg-white">
+       <a href="#" class="flex items-center ps-2.5 mb-5">
+          <span class="self-center text-xl font-semibold whitespace-nowrap text-gray-900">Categorías</span>
+       </a>
+       <ul class="space-y-2 font-medium">
+        @for (cat of this.rootCategorie$| async; track cat.IdCategoria){
+            <li>
+                <a (click)="this.GoToCategory($event, cat)" class="flex items-center p-2 text-gray-900 rounded-lg  hover:bg-blue-200 light:hover:bg-gray-700 group">
+                   <span class="ms-3 text-base">{{ cat.NombreCategoria }}</span>
+                </a>
+             </li>
+        }@empty {
+            <div> no tienes categorias ...</div>
+        }       
+       </ul>
+    </div>
+ </aside>
+    
+<!-- OLD VERSION : 
+<div *ngIf="rootcategories.length > 0">
+    <ul class="list-disc hover:bg-lime-300">
+        <a *ngFor="let cat of rootcategories"
+        [routerLink]="['/Tienda/Libros/', cat.IdCategoria]"
+        class="list-item">
+        
+        {{ cat.NombreCategoria }}
+    
+        </a>
+    </ul>
+</div> -->

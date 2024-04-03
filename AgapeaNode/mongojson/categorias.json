@@ -1,0 +1,179 @@
+{
+  "categorias": [
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd4"
+      },
+      "IdCategoria": "1",
+      "NombreCategoria": "Ciencias Humanas"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd5"
+      },
+      "IdCategoria": "10",
+      "NombreCategoria": "Novedades"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd6"
+      },
+      "IdCategoria": "2",
+      "NombreCategoria": "Ciencias Tecnicas"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd7"
+      },
+      "IdCategoria": "2-1",
+      "NombreCategoria": "Agricultura"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd8"
+      },
+      "IdCategoria": "2-10",
+      "NombreCategoria": "Informatica"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cd9"
+      },
+      "IdCategoria": "2-10-1",
+      "NombreCategoria": "Bases de datos"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cda"
+      },
+      "IdCategoria": "2-10-2",
+      "NombreCategoria": "D�se�o de paginas web"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cdb"
+      },
+      "IdCategoria": "2-10-3",
+      "NombreCategoria": "Ofimatica"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cdc"
+      },
+      "IdCategoria": "2-10-4",
+      "NombreCategoria": "Redes"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cdd"
+      },
+      "IdCategoria": "2-10-5",
+      "NombreCategoria": "Programacion"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cde"
+      },
+      "IdCategoria": "2-2",
+      "NombreCategoria": "Biologia"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cdf"
+      },
+      "IdCategoria": "2-3",
+      "NombreCategoria": "Ecologia y medio ambiente"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce0"
+      },
+      "IdCategoria": "2-4",
+      "NombreCategoria": "Historia de la ciencia"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce1"
+      },
+      "IdCategoria": "2-5",
+      "NombreCategoria": "Matematicas"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce2"
+      },
+      "IdCategoria": "2-6",
+      "NombreCategoria": "Zootecnia"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce3"
+      },
+      "IdCategoria": "2-7",
+      "NombreCategoria": "Arquitectura"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce4"
+      },
+      "IdCategoria": "2-8",
+      "NombreCategoria": "Botanica"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce5"
+      },
+      "IdCategoria": "2-9",
+      "NombreCategoria": "Fisica"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce6"
+      },
+      "IdCategoria": "3",
+      "NombreCategoria": "Economia"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce7"
+      },
+      "IdCategoria": "4",
+      "NombreCategoria": "Libros de Texto"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce8"
+      },
+      "IdCategoria": "5",
+      "NombreCategoria": "Libros Juveniles"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ce9"
+      },
+      "IdCategoria": "6",
+      "NombreCategoria": "Libros para ni�os"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cea"
+      },
+      "IdCategoria": "7",
+      "NombreCategoria": "Literatura"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85ceb"
+      },
+      "IdCategoria": "8",
+      "NombreCategoria": "Temario de oposiciones"
+    },
+    {
+      "_id": {
+        "$oid": "652ed23376d199e551d85cec"
+      },
+      "IdCategoria": "9",
+      "NombreCategoria": "Tiempo Libre"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+<div class="grid grid-cols-3 gap-3 justify-around items-baseline mx-10">
+    <div class="col-span-2">
+        <app-datospedido [clienteLogg]="this.clientData"></app-datospedido>
+    </div>
+    <div class="col-span-1">
+        
+            <h2 class="text-orange-500"><strong>Resumen de la cesta</strong></h2>            
+            @for (item of this.itemsList$| async; track item.libroElemento.ISBN13) {
+                <app-itemspedido [element]="item" (operateItemEvent)="ModifyOrderItem($event)"></app-itemspedido>
+            }@empty {
+                <div class="flex flex-row justify-center bg-blue-200 rounded-md p-2 w-1/2">
+                    <h3 class="text-blue-700">La cesta está vacía</h3>
+                    <span class="text-blue-700"><mat-icon>production_quantity_limits</mat-icon></span>
+                </div>
+            }
+
+            @if((this.itemsList$ | async )?.length !== 0){
+                <div class=" flex flex-col bg-orange-200 rounded-lg px-2" style="width: 30rem;">
+                    <div class="mt-2 ms-7 me-7 flex flex-row justify-between">
+                        <h4>Subtotal :  </h4>
+                        <h4> subtotal  €</h4>
+                    </div>
+                    <div class="mt-2 ms-7 me-7 flex flex-row justify-between">
+                        <h4>Gastos de envío y gestión : </h4>
+                        <h4> gastosEnvio €</h4>
+                    </div>
+                    
+                    <div class="mt-2 ms-7 me-7 flex flex-row justify-between">
+                        <h3 class="text-cyan-600"><strong>Total :</strong></h3>
+                        <h4>total €</h4>
+                    </div>
+                    <div class="flex flex-row justify-around mb-5">
+                        <button type="button" class="focus:outline-none text-white bg-orange-400 hover:bg-green-400 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ">
+                                <mat-icon color="white">shopping_bag</mat-icon>
+                                Seguir comprando
+                        </button>
+                        <button type="button" class="focus:outline-none text-white bg-cyan-600 hover:bg-purple-400 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 ">
+                            <mat-icon color="white">local_shipping</mat-icon>
+                            Finalizar compra
+                        </button>
+                    </div>
+                </div>
+            }
+            
+    </div>
+</div>

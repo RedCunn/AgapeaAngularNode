@@ -1,0 +1,10 @@
+button[disabled]{
+    cursor : not-allowed;
+    pointer-events: none;
+    color: black;
+    background-color: gray;
+}
+
+input[appEmailfilterdomain]{
+    box-shadow: theme('boxShadow.md');   
+}

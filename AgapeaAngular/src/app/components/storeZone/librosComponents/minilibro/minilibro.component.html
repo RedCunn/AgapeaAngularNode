@@ -1,0 +1,22 @@
+<div class="max-w-sm h-[35rem] bg-white border border-gray-200 rounded-lg shadow flex flex-col justify-between">
+    <a [routerLink]="['/Tienda/Libro',this.showedBook.ISBN13]" routerLinkActive="router-link-active">
+        <div class=" flex justify-center items-center mt-7">
+            <img class="rounded-t-lg" [src]="this.showedBook.ImagenLibroBASE64" alt="" />
+        </div>
+    </a>
+    <div class="p-5 flex flex-col justify-between">
+        <a [routerLink]="['/Tienda/Libro',this.showedBook.ISBN13]" routerLinkActive="router-link-active">
+            <h3 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{this.showedBook.Titulo}}</h3>
+        </a>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{this.showedBook.Autores}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{this.showedBook.Editorial}}</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{this.showedBook.NumeroPaginas}} páginas</p>
+        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong>{{this.showedBook.Precio | roundquantity }} €</strong></p>
+        <a (click)="AddBookToOrder()" class="inline-block mt-auto px-3 py-2 text-sm font-medium text-center text-white bg-blue-400 rounded-lg hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300  dark:focus:ring-blue-800">
+            <div class="flex justify-end items-end w-auto">
+                <mat-icon class="me-2">add_circle_outline</mat-icon>
+                Añadir
+            </div>
+        </a>
+    </div>
+</div>

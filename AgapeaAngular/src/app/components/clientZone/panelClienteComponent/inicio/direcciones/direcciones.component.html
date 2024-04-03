@@ -1,0 +1,25 @@
+<div class="col-span-2 flex flex-row">
+    <h2 class="text-white">Direcciones</h2>
+    <span class="text-white ms-2"><mat-icon>markunread_mailbox</mat-icon></span>
+</div>
+@if (this.direcciones$ | async) {
+    @for (direc of this.direcciones$ | async ; track $index) {
+        <app-minidireccion [addressEdit]="direc" (operateAddressEvent)="this.OperateAddress($event)"></app-minidireccion>
+    }
+}
+
+<br>          
+<div class="col-span-3 flex flex-row justify-end">
+    <button (click)="openModal()"
+    type="button" class="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-blue-500 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+        + Nueva dirección
+    </button>
+</div>
+@if (this.modalOpen) {
+    <app-modaldireccion [isOpen]="modalOpen" (close)="closeModal()" [addressEd]="addressEdit" (modifcrearDirecEvent)="OperateAddress($event)" ></app-modaldireccion>
+}
+
+
+
+  
+  

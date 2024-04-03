@@ -1,0 +1,52 @@
+{
+    "ofertas": [
+        {
+            "idoferta": 1,
+            "texto": "20% DE DESCUENTO EN LIBROS DE INFORMATICA"
+        },
+        {
+            "idoferta": 2,
+            "texto": "10% DE DESCUENTO EN LIBROS DE ECONOMIA"
+        },
+        {
+            "idoferta": 3,
+            "texto": "2% DE DESCUENTO EN LIBROS DE NACIONALISMOS"
+        },
+        {
+            "idoferta": 4,
+            "texto": "30% DE DESCUENTO EN LIBROS DE DEPORTES"
+        },
+        {
+            "idoferta": 5,
+            "texto": "ENVIO GRATIS PARA PEDIDOS DE MAS DE 100"
+        },
+        {
+            "idoferta": 6,
+            "texto": "SI PAGAS CON TARJETA PORTES GRATIS"
+        },
+        {
+            "idoferta": 7,
+            "texto": "COMPRANDO 5 TEXTOS UNO GRATIS"
+        },
+        {
+            "idoferta": 8,
+            "texto": "SI COMPRAS DOS UNO GRATIS SI NOS DAS LAS GRACIAS"
+        },
+        {
+            "idoferta": 9,
+            "texto": "DIA SIN IVA. NO TE LO PIERDAS"
+        },
+        {
+            "idoferta": 10,
+            "texto": "MALA SUERTE. HAY RECARGO DEL 10%"
+        },
+        {
+            "idoferta": 11,
+            "texto": "TE PAGAMOS 10EUROS SI COMPRAS UN LIBRO DE CATALU�A"
+        },
+        {
+            "idoferta": 12,
+            "texto": "HAS SIDO AGRACIADO CON UN LIBRO GRATIS DE INFORMATICA"
+        }
+    ]
+}

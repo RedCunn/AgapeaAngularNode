@@ -1,0 +1,24 @@
+{
+    "temas": [
+        {
+            "idtema": 1,
+            "tema": "INFORMATICA"
+        },
+        {
+            "idtema": 2,
+            "tema": "ECONOMIA"
+        },
+        {
+            "idtema": 3,
+            "tema": "DEPORTES"
+        },
+        {
+            "idtema": 4,
+            "tema": "NACIONALISMO"
+        },
+        {
+            "idtema": 5,
+            "tema": "ESPACIALES"
+        }
+    ]
+}

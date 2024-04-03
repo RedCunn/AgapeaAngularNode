@@ -1,0 +1,80 @@
+<header>
+    <div class="flex flex-row justify-end bg-gray-800">
+        <a class="mt-2 mb-2 me-7 text-white"><mat-icon color="white">phone</mat-icon>Contacto</a>
+        @if(this.clientdata$ | async ; as clientdata){
+            @if(clientdata.cuenta.email != ''){
+                <a [routerLink]="['/Cliente/Panel']" routerLinkActive="router-link-active"
+                class="mt-2 mb-2 me-10 text-white">
+                <mat-icon color="white">person</mat-icon>{{clientdata.cuenta.email}}
+            </a>
+            }@else{
+                <a [routerLink]="['/Cliente/Login']" routerLinkActive="router-link-active"
+                    class="mt-2 mb-2 me-10 text-white"><mat-icon color="white">person</mat-icon>Login</a>
+            }
+        }
+    </div>
+    <div class="flex flex-row bg-white justify-between items-center">
+
+        <div class="w-1/3">
+            <a [routerLink]="['/Tienda/Libreria','2-10']" routerLinkActive="router-link-active"><img class="w-1/2"
+                    src="../assets/img/logo-agapea.jpg" alt="..."></a>
+        </div>
+
+        <div class="w-1/3">
+            <form class="flex-grow">
+                <div class="relative mt-3">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400"
+                        placeholder="Buscar por libro, autores, ISBN..." required>
+                    <button type="submit"
+                        class="text-white absolute end-0.5 top-0.5 bottom-0.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="w-1/3 flex justify-end">
+            <a [routerLink]="['/Tienda/Pedido']" routerLinkActive="router-link-active">
+                <div
+                    class="me-10 w-fit py-0 px-1 border-2 border-orange-500 rounded-md bg-orange-300 m-2 flex flex-row justify-around items-center">
+                    <span class=" ms-1 me-1 text-orange-600 p-2"><mat-icon>shopping_cart</mat-icon></span>
+                    
+                        @if(this.count > 0){
+                            <span class="text-orange-800 mt-2 me-1">
+                                <h2 class="px-2 py-0 bg-orange-400 rounded-full">{{this.count}}</h2>
+                            </span>
+                        }
+                    
+                </div>
+            </a>
+        </div>
+
+    </div>
+</header>
+<div>
+    @if(!(this.routerEvent$ | async)!.url.match(this.pattern))
+    {
+    <!--mostrar paneles de tienda-categorias o cliente-panel-->
+    <div class="flex flex-row justify-evenly">
+        <app-paneltienda></app-paneltienda>
+        <router-outlet></router-outlet>
+    </div>
+
+    }@else {
+
+    <!-- estoy en /cliente/login|registro o en /mostrarpedido -->
+    <!-- selector donde el modulo de enrutamiento incrusta la vista del componente requerido por el cliente en la url -->
+    <div class="mt-10">
+        <router-outlet></router-outlet>
+    </div>
+    }
+</div>
+<footer></footer>

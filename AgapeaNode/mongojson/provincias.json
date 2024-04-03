@@ -1,0 +1,368 @@
+{
+  "provincias": [
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162958"
+      },
+      "CodPro": 1,
+      "NombreProvincia": "Álava"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162959"
+      },
+      "CodPro": 3,
+      "NombreProvincia": "Alicante/Alacant"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295a"
+      },
+      "CodPro": 4,
+      "NombreProvincia": "Almería"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295b"
+      },
+      "CodPro": 5,
+      "NombreProvincia": "Ávila"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295c"
+      },
+      "CodPro": 6,
+      "NombreProvincia": "Badajoz"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295d"
+      },
+      "CodPro": 7,
+      "NombreProvincia": "Balears (Illes)"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295e"
+      },
+      "CodPro": 2,
+      "NombreProvincia": "Albacete"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16295f"
+      },
+      "CodPro": 8,
+      "NombreProvincia": "Barcelona"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162960"
+      },
+      "CodPro": 9,
+      "NombreProvincia": "Burgos"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162961"
+      },
+      "CodPro": 10,
+      "NombreProvincia": "Cáceres"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162962"
+      },
+      "CodPro": 12,
+      "NombreProvincia": "Castellón/Castelló"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162963"
+      },
+      "CodPro": 13,
+      "NombreProvincia": "Ciudad Real"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162964"
+      },
+      "CodPro": 14,
+      "NombreProvincia": "Córdoba"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162965"
+      },
+      "CodPro": 15,
+      "NombreProvincia": "Coruña (A)"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162966"
+      },
+      "CodPro": 16,
+      "NombreProvincia": "Cuenca"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162967"
+      },
+      "CodPro": 18,
+      "NombreProvincia": "Granada"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162968"
+      },
+      "CodPro": 19,
+      "NombreProvincia": "Guadalajara"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162969"
+      },
+      "CodPro": 20,
+      "NombreProvincia": "Guipúzcoa"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296a"
+      },
+      "CodPro": 21,
+      "NombreProvincia": "Huelva"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296b"
+      },
+      "CodPro": 11,
+      "NombreProvincia": "Cádiz"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296c"
+      },
+      "CodPro": 17,
+      "NombreProvincia": "Girona"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296d"
+      },
+      "CodPro": 22,
+      "NombreProvincia": "Huesca"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296e"
+      },
+      "CodPro": 23,
+      "NombreProvincia": "Jaén"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16296f"
+      },
+      "CodPro": 24,
+      "NombreProvincia": "León"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162970"
+      },
+      "CodPro": 25,
+      "NombreProvincia": "Lleida"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162971"
+      },
+      "CodPro": 26,
+      "NombreProvincia": "Rioja (La)"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162972"
+      },
+      "CodPro": 27,
+      "NombreProvincia": "Lugo"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162973"
+      },
+      "CodPro": 29,
+      "NombreProvincia": "Málaga"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162974"
+      },
+      "CodPro": 30,
+      "NombreProvincia": "Murcia"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162975"
+      },
+      "CodPro": 28,
+      "NombreProvincia": "Madrid"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162976"
+      },
+      "CodPro": 31,
+      "NombreProvincia": "Navarra"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162977"
+      },
+      "CodPro": 33,
+      "NombreProvincia": "Asturias"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162978"
+      },
+      "CodPro": 39,
+      "NombreProvincia": "Cantabria"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162979"
+      },
+      "CodPro": 40,
+      "NombreProvincia": "Segovia"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297a"
+      },
+      "CodPro": 41,
+      "NombreProvincia": "Sevilla"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297b"
+      },
+      "CodPro": 42,
+      "NombreProvincia": "Soria"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297c"
+      },
+      "CodPro": 38,
+      "NombreProvincia": "Santa Cruz de Tenerife"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297d"
+      },
+      "CodPro": 43,
+      "NombreProvincia": "Tarragona"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297e"
+      },
+      "CodPro": 45,
+      "NombreProvincia": "Toledo"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16297f"
+      },
+      "CodPro": 44,
+      "NombreProvincia": "Teruel"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162980"
+      },
+      "CodPro": 46,
+      "NombreProvincia": "Valencia/València"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162981"
+      },
+      "CodPro": 47,
+      "NombreProvincia": "Valladolid"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162982"
+      },
+      "CodPro": 48,
+      "NombreProvincia": "Vizcaya"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162983"
+      },
+      "CodPro": 49,
+      "NombreProvincia": "Zamora"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162984"
+      },
+      "CodPro": 51,
+      "NombreProvincia": "Ceuta"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162985"
+      },
+      "CodPro": 52,
+      "NombreProvincia": "Melilla"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162986"
+      },
+      "CodPro": 34,
+      "NombreProvincia": "Palencia"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162987"
+      },
+      "CodPro": 36,
+      "NombreProvincia": "Pontevedra"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162988"
+      },
+      "CodPro": 35,
+      "NombreProvincia": "Palmas (Las)"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b162989"
+      },
+      "CodPro": 32,
+      "NombreProvincia": "Ourense"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16298a"
+      },
+      "CodPro": 37,
+      "NombreProvincia": "Salamanca"
+    },
+    {
+      "_id": {
+        "$oid": "5dc1ece910164d109b16298b"
+      },
+      "CodPro": 50,
+      "NombreProvincia": "Zaragoza"
+    }
+  ]
+}
